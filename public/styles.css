@@ -1,0 +1,124 @@
+/* Style général pour tout le corps de la page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000428, #004e92);
+    color: white;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteneur principal */
+.container {
+    padding: 50px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Style du titre principal */
+.title {
+    font-size: 4rem;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+}
+
+/* Style de la description */
+.description {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Bloc des comptes */
+.account-block {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    margin: 20px auto;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+/* Animation du bloc au survol */
+.account-block:hover {
+    transform: scale(1.05);
+}
+
+/* Image du logo de la plateforme */
+.account-block .logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+/* Titre du compte */
+.account-title {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+/* Infos sur le stock de comptes */
+.stock-info {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+/* Style du bouton */
+.generate-btn {
+    background-color: #004e92;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.generate-btn:hover {
+    background-color: #003366;
+}
+
+/* Page de résultat après génération */
+.result-block {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+/* Style du compte généré */
+.generated-account {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+    word-wrap: break-word;
+}
+
+/* Style du bouton copier */
+.copy-btn {
+    background-color: #2e8b57;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.copy-btn:hover {
+    background-color: #1c5d36;
+}

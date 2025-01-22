@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayoub Gen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Ayoub Gen</h1>
+        <p class="description">Sans pub, une génération rapide et efficace.</p>
+        <div class="account-block">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlygniVyfuLeesGOLoHtebBXMyWcd2K-uiMg&s" alt="Crunchyroll" class="logo">
+            <h2 class="account-title">Crunchyroll</h2>
+            <p class="stock-info" id="stock-info">Chargement du stock...</p>
+            <button class="generate-btn" id="generate-btn">Générer</button>
+        </div>
+    </div>
+    <script>
+        function loadStock() {
+            fetch('/stock')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('stock-info').textContent = 
+                        `${data.stock} comptes en stock`;
+                })
+                .catch(() => {
+                    document.getElementById('stock-info').textContent = 
+                        `Erreur lors du chargement du stock`;
+                });
+        }
+
+        document.getElementById('generate-btn').addEventListener('click', () => {
+            fetch('/generate', { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        localStorage.setItem('generatedAccount', data.compte);
+                        window.location.href = 'generate.html';
+                    }
+                });
+        });
+
+        loadStock();
+    </script>
+</body>
+</html>

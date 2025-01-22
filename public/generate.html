@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte généré</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="result-block">
+            <h1>Voici votre compte :</h1>
+            <p class="generated-account" id="generated-account"></p>
+            <button class="copy-btn" onclick="copyAccount()">Copier</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const accountElement = document.getElementById('generated-account');
+            const account = localStorage.getItem('generatedAccount');
+            accountElement.textContent = account || "Aucun compte disponible.";
+        });
+
+        function copyAccount() {
+            const account = document.getElementById('generated-account').textContent;
+            navigator.clipboard.writeText(account).then(() => {
+                alert("Compte copié !");
+            });
+        }
+    </script>
+</body>
+</html>
